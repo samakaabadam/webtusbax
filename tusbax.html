@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+      body{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+    background-color: aqua;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+        .container {
+           
+  
+            background-color: antiquewhite;
+            box-shadow:
+            0px -10px 10px rgba(0, 0, 0, 0.7),
+    -10px 0px 10px rgba(0, 0, 0, 0.7),
+    0px 10px 10px rgba(0, 0, 0, 0.7),
+     20px 0px 10px rgba(0, 0, 0, 0.7);
+            width: 400px;
+            border-radius: 20px;
+            justify-content: center;
+
+        }
+        .container .shaashad {
+            top: 0;
+            height: 50%;
+            width: 100%;
+            background-color: aquamarine;
+            border-radius: 15px 15px 0px 0px;
+            padding: 5px;
+            position: relative; /* This makes sure the child elements are positioned relative to this container */
+            
+        }
+        .container .shaashad .list {
+            height: auto;
+            width: 100px;
+            right: 10px;
+            z-index: 8;
+            background-color: aliceblue;
+            padding: 10px;
+            position: absolute;
+            display: inline-block;
+            align-items: center;
+            display: none;
+        }
+        .container .shaashad .list option:hover{
+            background-color: blue;
+            color: white;
+
+        }
+        .container .shaashad .list .sodonle, .boqolle {
+            text-align: center;
+            margin: 20px;
+            padding: 5px;
+            font-size: large;
+            font-weight: bold;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .container .shaashad .button {
+            position: absolute;
+            top: 5px;
+            right: 35px;
+            background-color: transparent;
+            padding: 10px;
+            padding-top: 0;
+            width: 0px;
+            height: 0px;
+            z-index: 10;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: large;
+            display: flex;
+            padding-right: 10px;
+        }
+        .container .shaashad .button li {
+            padding: 0;
+            margin-right: 9px;
+            width: 0;
+            height: 0;
+            background-color: transparent;
+        }
+        .container .shaashad .xisaabiye {
+    height: 50px;
+    width: 100%;
+    background-color: transparent;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-size: 48px;
+}
+
+.container .shaashad .text-player {
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 50px; /* Add margin-bottom to create space above xisaabiye */
+    padding: 20px;
+}
+
+        .container .edegso{
+            height: 50%;
+            bottom: 0;
+            width: 100%;
+            border-radius: 0px 0px 15px 15px;
+            background-color: blanchedalmond;
+            padding: 5px;
+
+        }
+        .container .edegso  .colors {
+    width: 99%;
+    display: flex; /* Use flexbox to layout spans */
+    justify-content: space-between; /* Ensure spans fill the container */
+    background-color: red;
+    align-items: center;
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    border-radius: 50px 50px 50px 50px;
+    border: 5px solid white;
+    
+  }
+
+
+  .colors span {
+    background-color: antiquewhite;
+    flex: 1; /* Make spans take up equal space */
+    height: 30px; /* Set a fixed height */
+    margin: 0; /* Remove margin */
+  }
+  .span1{
+    border-radius: 50px 0px 0px 50px;
+  }
+  .span7{
+    border-radius: 0px 50px 50px 0px;
+  }
+  .container .edegso .botoms {
+    display: flex;
+    padding: 20px;
+    width: 100%;
+    justify-content: space-between; /* Space between left, center, and right */
+    align-items: baseline; /* Aligns based on text baselines */
+}
+
+.botoms button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #ddd;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.haye {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    font-size: 28px;
+}
+
+.tiriye {
+    margin-left: auto;
+    margin-right: 20px;
+    
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="shaashad">
+            
+            <div class="button" id="button">
+                <li></li><li></li><li></li>
+            </div>
+            <div class="list" id="list" type="select">
+                <option class="sodonle" id="sodonle">sodon</option>
+                <option class="boqolle" id="boqolle">boqol</option>
+                <input type="radio" name="tasbiix" id="tasbiix-sodonle" value="sodonle">
+<label for="tasbiix-sodonle">Sodonle</label>
+<input type="radio" name="tasbiix" id="tasbiix-boqol" value="boqol">
+<label for="tasbiix-boqol">Boqol</label>
+            </div>
+            <div class="text-player" id="text-player">لَا إِلٰهَ إِلَّا اللّٰهُ وَحْدَهُ لاَ شَرِيْكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيْرٌ
+            </div>
+            <div class="xisaabiye" id="xisaabiye">0</div>
+        </div>
+        <div class="edegso" id="edegso">
+            <div class="colors">
+                <span class="span1"></span>
+                <span class="span2"></span>
+                <span class="span3" ></span>
+                <span class="span4"></span>
+                <span class="span5"></span>
+                <span class="span6"></span>
+                <span class="span7"></span>
+              </div>
+               <div class="botoms" id="botoms">
+                <button class="reset" id="reset">Reset</button>
+                <button class="haye" id="haye">33</button>
+                <button class="tiriye" id="counter">Tiriye</button>
+               </div>
+
+        </div>
+    </div>
+    
+    <script>
+        
+
+       
+
+
+    let SerialNo = 0;
+    let tiriye = 0;
+    let result = 0;
+
+
+    // Wait for the DOM to fully load before attaching event listeners
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelector('.button').addEventListener('click', function(event) {
+        event.stopPropagation(); // Prevent the event from bubbling to the body
+        const list = document.querySelector('.list');
+        if (window.getComputedStyle(list).display === 'none') {
+            list.style.display = 'block'; // Show the list
+        } else {
+            list.style.display = 'none';  // Hide the list
+        }
+    });
+
+    // Hide the list when clicking anywhere else on the body
+    document.body.addEventListener('click', function() {
+        document.querySelector('.list').style.display = 'none'; // Hide the list
+    });
+
+    // Prevent the list from closing if clicking inside it
+    document.querySelector('.list').addEventListener('click', function(event) {
+        event.stopPropagation(); // Prevent body click from triggering
+    });
+    // sodonle 
+    document.getElementsByName('tasbiix').forEach((radio) => {
+        radio.addEventListener('change', function() {
+            if (document.getElementById('tasbiix-sodonle').checked) {
+                document.getElementById('text-player').style.background = 'yellow';
+            } else if (document.getElementById('tasbiix-boqol').checked) {
+                document.getElementById('text-player').style.background = 'red';
+            }
+        });
+    });
+    document.querySelector('.sodonle').addEventListener('click', function(event) {
+    SerialNo = 0;
+    tiriye = 0;
+    result = 0;
+    document.getElementById('text-player').textContent='';
+    document.getElementById('xisaabiye').textContent = 0;
+    event.stopPropagation(); // Prevent the event from bubbling to the body
+    const list = document.querySelector('.haye');
+    document.querySelector(".haye").textContent = '33'; // Set ariaValueText
+    document.querySelectorAll('span').forEach(function (element) {
+                element.style.background = "antiquewhite";
+            });
+    // Check ariaValueText instead of window.getComputedStyle
+    if (document.querySelector(".haye").textContent === '33') {
+        
+        document.querySelector('.list').style.display = 'none';
+    } 
+});
+
+
+// boqolle
+
+document.querySelector('.boqolle').addEventListener('click', function(event) {
+    event.stopPropagation(); // Prevent the event from bubbling to the body
+    const list = document.querySelector('.haye');
+    document.querySelector(".haye").textContent = '100'; // Set ariaValueText
+    SerialNo = 0;
+    tiriye = 0;
+    result = 0;
+    document.getElementById('text-player').textContent='';
+    document.getElementById('xisaabiye').textContent = 0;
+    document.querySelectorAll('span').forEach(function (element) {
+                element.style.background = "antiquewhite";
+            });
+    // Check ariaValueText instead of window.getComputedStyle
+    if (document.querySelector(".haye").textContent === '100') {
+       
+        document.querySelector('.list').style.display = 'none';
+    } 
+});
+
+        // Reset counter and clear the screen when the first button is clicked
+        document.getElementById('reset').addEventListener('click', function () {
+            document.getElementById('xisaabiye').textContent = 0;
+            document.getElementById('text-player').textContent = "";
+        
+            document.querySelector(".haye").textContent = '33'; 
+            SerialNo = 0;
+            tiriye = 0;
+            result = 0;
+
+
+            
+
+            document.querySelectorAll('span').forEach(function (element) {
+                element.style.background = "antiquewhite";
+            });
+        });
+
+
+        // Increment counter and update the screen when the second button is clicked
+        document.getElementById('counter').addEventListener('click', function () {
+            if(document.querySelector(".haye").textContent === '33'){
+            let currentNum1 = parseInt(document.getElementById('xisaabiye').textContent) || 0; // Convert text to a number (or default to 0)
+            result = currentNum1 + 1; // Increment the value by 1
+            SerialNo += 1;
+            tiriye += 1;
+
+
+            // Change background color for specific results
+            if (result == 5) document.querySelector('.span1').style.background = "green";
+            if (result == 10) document.querySelector('.span2').style.background = "green";
+            if (result == 15) document.querySelector('.span3').style.background = "green";
+            if (result == 20) document.querySelector('.span4').style.background = "green";
+            if (result == 25) document.querySelector('.span5').style.background = "green";
+            if (result == 30) document.querySelector('.span6').style.background = "green";
+            if (result == 33) document.querySelector('.span7').style.background = "green";
+
+
+            if (result == 34) {
+                result = 1;
+                document.querySelectorAll('span').forEach(function (element) {
+                    element.style.background = "antiquewhite";
+                });
+            }
+
+
+            // Update the display and logic based on specific SerialNo values
+            if (SerialNo == 1) {
+    document.getElementById('text-player').textContent = "سُبْحَانَ اللّٰهِ";
+    document.getElementById('xisaabiye').textContent = result;
+}
+
+if (SerialNo <= 33 && SerialNo != 34) {
+    document.getElementById('text-player').textContent = "سُبْحَانَ اللّٰهِ";
+    document.getElementById('xisaabiye').textContent = result;
+}
+
+if (SerialNo == 34) {
+    document.getElementById('text-player').textContent = "اَلْحَمْدُ لِلّٰهِ";
+    document.getElementById('xisaabiye').textContent = result;
+}
+
+if (SerialNo <= 66 && SerialNo > 34) {
+    document.getElementById('text-player').textContent = "اَلْحَمْدُ لِلّٰهِ";
+    document.getElementById('xisaabiye').textContent = result;
+}
+
+if (SerialNo == 67) {
+    document.getElementById('xisaabiye').textContent = result;
+    document.getElementById('text-player').textContent = "أَكْبَرُ اَللّٰهُ";
+}
+
+if (SerialNo <= 99 && SerialNo > 66) {
+    document.getElementById('text-player').textContent = "اَللّٰهُ أَكْبَرُ";
+    document.getElementById('xisaabiye').textContent = result;
+} else if (SerialNo == 100) {
+    document.getElementById('xisaabiye').textContent = result;
+    SerialNo = 0;
+    document.getElementById('xisaabiye').textContent = "";
+    document.getElementById('text-player').textContent = "لَا إِلٰهَ إِلَّا اللّٰهُ وَحْدَهُ لاَ شَرِيْكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيْرٌ";
+    document.getElementById('text-player').style.padding = "20px";
+}
+            }else if(document.querySelector(".haye").textContent === '100'){
+            let currentNum1 = parseInt(document.getElementById('xisaabiye').textContent) || 0; // Convert text to a number (or default to 0)
+            result = currentNum1 + 1; // Increment the value by 1
+            SerialNo += 1;
+            tiriye += 1;
+
+
+            // Change background color for specific results
+            if (result == 15) document.querySelector('.span1').style.background = "blue";
+            if (result == 30) document.querySelector('.span2').style.background = "blue";
+            if (result == 45) document.querySelector('.span3').style.background = "blue";
+            if (result == 60) document.querySelector('.span4').style.background = "blue";
+            if (result == 75) document.querySelector('.span5').style.background = "blue";
+            if (result == 90) document.querySelector('.span6').style.background = "blue";
+            if (result == 100) document.querySelector('.span7').style.background = "blue";
+
+
+            if (result == 101) {
+                result = 1;
+                document.querySelectorAll('span').forEach(function (element) {
+                    element.style.background = "antiquewhite";
+                });
+            }
+
+
+            // Update the display and logic based on specific SerialNo values
+            if (SerialNo == 1) {
+    document.getElementById('text-player').textContent="سُبْحَانَ الله وَبِحَمْدِهِ";
+    document.getElementById('xisaabiye').textContent = result;
+}
+
+if (SerialNo <= 100 && SerialNo != 101) {
+    document.getElementById('text-player').textContent ="سُبْحَانَ الله وَبِحَمْدِهِ";
+    document.getElementById('xisaabiye').textContent = result;
+}
+
+if (SerialNo == 101) {
+    document.getElementById('text-player').textContent = "أسْتَغْفِرُ اللهَ وَأتُوبُ إلَيهِ";
+    document.getElementById('xisaabiye').textContent = result;
+}
+
+if (SerialNo <= 200 && SerialNo >101 ) {
+    document.getElementById('text-player').textContent = "أسْتَغْفِرُ اللهَ وَأتُوبُ إلَيهِ";
+    document.getElementById('xisaabiye').textContent = result;
+}
+ else if (SerialNo == 201) {
+    document.getElementById('xisaabiye').textContent = result; 
+    SerialNo = 0;
+    result=0;
+    document.getElementById('xisaabiye').textContent = "";
+    document.getElementById('text-player').textContent = "لَا إِلٰهَ إِلَّا اللّٰهُ وَحْدَهُ لاَ شَرِيْكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيْرٌ";
+    document.getElementById('text-player').style.padding = "20px";
+}
+            }else{
+alert('please mid dooro');
+            }
+});
+        
+    });
+
+        </script>
+        
+
+</body>
+</html>
